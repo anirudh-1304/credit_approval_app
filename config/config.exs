@@ -34,11 +34,11 @@ config :gen_smtp,
 # config :credit_approval_app, CreditApprovalApp.Mailer, adapter: Swoosh.Adapters.Local
 
 config :credit_approval_app, CreditApprovalApp.Mailer,
-  # adapter: Swoosh.Adapters.Local,
+  #adapter: Swoosh.Adapters.Local,
   adapter: Swoosh.Adapters.SMTP,
   relay: "smtp.gmail.com",
   username: "anirudh.k.patel@gmail.com",
-  password: "stym vjfj mxth etfx",
+  password: System.get_env("GMAIL_APP_PASSWORD"),
   port: 587,
   ssl: false,
   tls: :if_available,

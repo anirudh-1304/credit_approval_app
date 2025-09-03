@@ -101,12 +101,13 @@ if config_env() == :prod do
   # See https://hexdocs.pm/swoosh/Swoosh.html#module-installation for details.
 
   config :credit_approval_app, CreditApprovalApp.Mailer,
-    adapter: Swoosh.Adapters.SMTP,
-    relay: "smtp.gmail.com",
-    username: "anirudh.k.patel@gmail.com",
-    password: "lovetoohard",
-    ssl: true,
-    tls: :if_available,
-    auth: :always,
-    port: 587
+  #adapter: Swoosh.Adapters.Local,
+  adapter: Swoosh.Adapters.SMTP,
+  relay: "smtp.gmail.com",
+  username: "anirudh.k.patel@gmail.com",
+  password: System.get_env("GMAIL_APP_PASSWORD"),
+  port: 587,
+  ssl: false,
+  tls: :if_available,
+  auth: :always
 end
