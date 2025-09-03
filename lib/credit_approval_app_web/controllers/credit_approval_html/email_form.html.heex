@@ -1,0 +1,16 @@
+<h2 class="text-xl font-semibold mb-4">Enter Your Email</h2>
+
+<p class="mb-4">
+  Please provide your email address so we can send you a PDF report of your credit approval details.
+</p>
+
+<.form for={@details} action={~p"/send_email"} method="post">
+  <.input
+    type="email"
+    field={@details[:email]}
+    placeholder="Enter your email address"
+    required
+  />
+  <br />
+  <.button>Send Email</.button>
+</.form>

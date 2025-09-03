@@ -1,0 +1,29 @@
+<h5>Income Information Form</h5>
+<br />
+<br />
+<h3>Please give answers for below</h3>
+<br />
+
+<.form for={@details} action={~p"/credit_approved"} method="post">
+  <h4>total monthly income from all income source (in USD)</h4>
+  <.input
+    type="number"
+    step="any"
+    field={@details[:total_monthly_income]}
+    placeholder="Enter in USD"
+  />
+  <br />
+  <h4>total monthly expenses (in USD)</h4>
+  <.input
+    type="number"
+    step="any"
+    field={@details[:total_monthly_expense]}
+    placeholder="Enter in USD"
+  />
+  <br />
+  <.button>Submit Details</.button>
+</.form>
+
+<div class="mt-6">
+  <.link navigate={~p"/risk_assessment"} class="text-blue-600 underline">← Back</.link>
+</div>

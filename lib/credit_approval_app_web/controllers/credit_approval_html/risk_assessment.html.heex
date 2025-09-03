@@ -1,0 +1,49 @@
+<h5>Risk Assessment Form</h5>
+<br />
+<br />
+<h3>Do you have the following</h3>
+<br />
+
+<.form for={@details} action={~p"/risk_assessment"} method="post">
+  <h4>A Paying Job?</h4>
+  <.input
+    type="select"
+    field={@details[:paying_job]}
+    options={[Yes: "yes", No: "no"]}
+    prompt="Select an option"
+  />
+  <br />
+  <h4>Do you consistently had a paying job for past 12 months?</h4>
+  <.input
+    type="select"
+    field={@details[:consistent_12months]}
+    options={[Yes: "yes", No: "no"]}
+    prompt="Select an option"
+  />
+  <br />
+  <h4>Do you own a home?</h4>
+  <.input
+    type="select"
+    field={@details[:own_house]}
+    options={[Yes: "yes", No: "no"]}
+    prompt="Select an option"
+  />
+  <br />
+  <h4>Do you own a car?</h4>
+  <.input
+    type="select"
+    field={@details[:own_car]}
+    options={[Yes: "yes", No: "no"]}
+    prompt="Select an option"
+  />
+  <br />
+  <h4>Do you have any additional source of income?</h4>
+  <.input
+    type="select"
+    field={@details[:additional_income]}
+    options={[Yes: "yes", No: "no"]}
+    prompt="Select an option"
+  />
+  <br />
+  <.button>Submit Details</.button>
+</.form>
